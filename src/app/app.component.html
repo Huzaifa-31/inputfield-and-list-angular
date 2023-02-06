@@ -1,0 +1,20 @@
+<section>
+  <!-- input field where i enter my data -->
+  <app-list-form
+    (newName)="onemitAddNewName($event)"
+    [student]="student"
+    (updatedName)="updateThisNameInList($event)"
+  ></app-list-form>
+
+  <!-- rendering my list -->
+  <ul>
+    <app-list-item
+      *ngFor="let studentName of students; let i = index"
+      [name]="studentName"
+      [index]="i"
+      (deleteNameByIndex)="onemitDeleteNameByIndex($event)"
+      (editNameById)="onemitEditNameById($event)"
+      [
+    ></app-list-item>
+  </ul>
+</section>

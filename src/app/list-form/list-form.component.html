@@ -1,0 +1,11 @@
+<input
+  type="text"
+  placeholder="enter name"
+  [(ngModel)]="name"
+  (input)="oninputSetName($event)"
+/>
+<!-- {{ student?.name ?? "" }}
+{{ name }} -->
+
+<button (click)="onclickEmitNewName()">Add</button>
+<button (click)="onclickEmitUpdateName()">Update</button>

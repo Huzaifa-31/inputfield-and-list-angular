@@ -1,0 +1,50 @@
+<button (click)="onclickIncreaseCount()">inc</button>
+
+<h1
+  [title]="count"
+  [ngStyle]="{
+    color: count > 5 ? 'red' : 'green'
+  }"
+>
+  My count {{ count }}
+</h1>
+
+<!-- <p *ngIf="condition">You are above 5</p> -->
+<!-- <p *ngIf="count > 5"></p> -->
+<!-- <p *ngIf="count <= 5">You are below 5</p> -->
+
+<p *ngIf="count > 5; else below5">You are above 5</p>
+
+<ng-template #below5>
+  <p *ngIf="count >= 3; else blow3">You are blow 5 but above 3</p>
+</ng-template>
+
+<ng-template #blow3>
+  <p>Below 3</p>
+</ng-template>
+
+<button (click)="onclickDecreaseCount()">dec</button>
+
+<!-- 
+ 
+  [ngClass]="condition ? 'class-1' : 'class-2'"
+  [ngClass]="{
+    'class-name':condition
+  }"
+ -->
+
+<ol>
+  <!-- <li *ngFor="let item of array">{{ item }}</li> -->
+  <!-- list = ['apple', 'mango', 'kiwi', 'pineapple']; -->
+  <li *ngFor="let item of list">{{ item }}</li>
+</ol>
+
+<input
+  type="text"
+  placeholder="enter name"
+  [value]="name"
+  (input)="oninputSetName($event)"
+/>
+
+<input type="text" placeholder="enter name" [(ngModel)]="name" />
+<p>{{ name }}</p>
